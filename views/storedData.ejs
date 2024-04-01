@@ -1,0 +1,44 @@
+<!-- views/storedData.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stored Form Data</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Stored Form Data</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Mobile</th>
+          <th>Address</th>
+          <th>Date of Birth</th>
+          <th>Message</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% formData.forEach(data => { %>
+          <tr>
+            <td><%= data.name %></td>
+            <td><%= data.email %></td>
+            <td><%= data.mobile %></td>
+            <td><%= data.address %></td>
+            <td><%= data.dob %></td>
+            <td><%= data.message %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+
+
+    <form action="/logout" method="get">
+      <button type="submit" class="btn btn-danger">Logout</button>
+    </form>
+  </div>
+</body>
+</html>
